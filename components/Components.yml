@@ -6,4 +6,4 @@
 
 Server:
   Terminal:
-    BeforeContent: "elements/CustomField"
+    BeforeContent: "elements/ConnectString"

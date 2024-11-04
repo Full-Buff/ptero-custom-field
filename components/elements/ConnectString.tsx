@@ -10,8 +10,19 @@ const DisplayVariables = () => {
         return <p>Loading Connect...</p>;
     }
 
+    // This whole next section of checking if the 4th object in the array exists may not
+    //even be necessary, i was testing with an old version of the extension running at
+    // the same time, and it errored the whole page out every time i rebuilt it.
+    // currently 3AM and im too tired. will revisit...
+
+    let serverPassword;
+    // Check if 'variables' is an array and has at least 4 elements
+    if (variables.length > 3) {
+        // Handle the case where there are fewer than 4 variables
+        serverPassword = variables[3]?.serverValue;; // Or display an error message, or handle as needed
+    }
+
     const serverAddress = `${allocations[0]?.ip}:${allocations[0]?.port}`;
-    const serverPassword = `${variables[3].serverValue}`;
 
     const connectInfo = `connect ${serverAddress}; password ${serverPassword}`;
 
