@@ -22,7 +22,7 @@ const DisplayVariables = () => {
         serverPassword = variables[3]?.serverValue;; // Or display an error message, or handle as needed
     }
 
-    const serverAddress = `${allocations[0]?.ip}:${allocations[0]?.port}`;
+    const serverAddress = `${allocations[0]?.alias}:${allocations[0]?.port}`;
 
     const connectInfo = `connect ${serverAddress}; password ${serverPassword}`;
 
